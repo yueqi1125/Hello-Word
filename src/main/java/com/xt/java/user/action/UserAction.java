@@ -19,7 +19,7 @@ public class UserAction {
 	
 	@RequestMapping("/login")
 	public String login(User user,Map<String,Object> map){
-		if(!us.login(user).getUserName().equals(null)){
+		if(!us.login(user).getUserName().equals(null)){ 
 			map.put("userInfo", us.login(user).getUserName());
 			return "stuList";
 		}
