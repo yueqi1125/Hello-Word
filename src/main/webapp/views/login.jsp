@@ -7,8 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<h1>登录</h1>
+	<div align="center">
+		<h3>登录</h3>
+		<hr>
+		<form action="">
+			用户姓名：<input type="text" name="userName"><br>
+			用户密码：<input type="password" name="password"><br>
+			<input type="submit" value="提交">
+		</form>
 	</div>
 </body>
 </html>
