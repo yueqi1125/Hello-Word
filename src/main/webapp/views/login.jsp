@@ -10,7 +10,7 @@
 	<div align="center">
 		<h3>登录</h3>
 		<hr>
-		<form action="">
+		<form action="${pageContext.request.contextPath}/login.action">
 			用户姓名：<input type="text" name="userName"><br>
 			用户密码：<input type="password" name="password"><br>
 			<input type="submit" value="提交">
