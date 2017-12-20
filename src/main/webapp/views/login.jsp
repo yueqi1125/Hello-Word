@@ -25,7 +25,7 @@
 		</c:if>
 		<form action="${ctxPath}/login.action" method="post">
 			用户姓名：<input type="text" name="userName"><br>
-			用户密码：<input type="password" name="password"><br>
+			用户密码：<input type="password" name="passwd"><br>
 			<input type="submit" value="登录">
 			<input type="button" id="Register" value="注册用户">
 		</form>

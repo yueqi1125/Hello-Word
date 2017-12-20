@@ -1,5 +1,8 @@
 package com.xt.java.user.dao;
 
+import java.util.List;
+
+import com.xt.java.user.model.Student;
 import com.xt.java.user.model.User;
 
 public interface IUserDao {
@@ -21,4 +24,31 @@ public interface IUserDao {
 	 * @return
 	 */
 	public User queUserName(String userName);
+	
+	/**
+	 * 向数据库传入用户数据
+	 * 完成用户注册
+	 * @param user
+	 */
+	public void register(User user);
+	
+	/**
+	 * 查询全部学生信息
+	 * 返回学生信息列表
+	 * @return
+	 */
+	public List<Student> getAllStuInfo();
+	
+	/**
+	 * 向数据库添加学生信息
+	 * @param stu
+	 */
+	public void addStu(Student stu);
+	
+	/**
+	 * 通过学生编号查询学生信息
+	 * @param stuNo
+	 * @return
+	 */
+	public Student queStuNo(String stuNo);
 }
