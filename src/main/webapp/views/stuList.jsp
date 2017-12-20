@@ -27,7 +27,12 @@
 			<c:forEach var="stu" items="${stuList }">
 				<tr>
 					<td>${stu.stuNo }</td><td>${stu.stuName }</td><td>${stu.college}</td><td>${stu.tel}</td><td>${stu.age}</td>
-					<td><a href="stuManager/${stu.stuNo }.action" method="update">查看</a>:<a href="stuManager/${stu.stuNo }.action">删除</a></td>
+					<td>
+						<a href="stuManager/${stu.stuNo }.action" method="get">查看</a>:
+						<a href="stuManager/${stu.stuNo }.action" method="post">删除
+							<input type="hidden" name="_method" value="delete"/>
+						</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>

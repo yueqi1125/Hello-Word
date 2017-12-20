@@ -96,6 +96,7 @@ public class UserDao implements IUserDao{
 	}
 	
 	/**
+	 * 查询学生信息
 	 * 通过学生编号查询学生信息
 	 * (数据库变量名与类变量名不匹配)
 	 */
@@ -117,5 +118,27 @@ public class UserDao implements IUserDao{
 			stu = stus.get(0);
 		}
 		return stu;
+	}
+	
+	/**
+	 * 删除学生信息
+	 * 通过学生编号删除数据库中的学生信息
+	 */
+	public void delStu(String stuNo){
+		String sql = "delete * from student where stu_No = ?";
+		jdbcTemplate.update(sql, stuNo);
+	}
+	
+	/**
+	 * 修改学生信息
+	 * 将传入的Student对象中的数据提取出来存入数据库
+	 */
+	public void updateStu(Student stu){
+		String sql = "update student set stu_name = ?, stu_coll = ?, stu_tel = ?,stu_age = ? where stu_no = ?";
+		jdbcTemplate.update(sql,	stu.getStuName(),
+									stu.getCollege(),
+									stu.getTel(),
+									stu.getAge(),
+									stu.getStuNo());
 	}
 }

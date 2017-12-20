@@ -51,4 +51,16 @@ public interface IUserDao {
 	 * @return
 	 */
 	public Student queStuNo(String stuNo);
+	
+	/**
+	 * 通过学生编号删除学生
+	 * @param stuNo
+	 */
+	public void delStu(String stuNo);
+	
+	/**
+	 * 修改学生信息
+	 * @param stu
+	 */
+	public void updateStu(Student stu);
 }

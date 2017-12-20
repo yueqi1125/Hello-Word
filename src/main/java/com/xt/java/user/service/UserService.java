@@ -81,4 +81,29 @@ public class UserService implements IUserService{
 		}
 		return true;
 	}
+
+	/**
+	 * 删除学生信息
+	 * 将传入的学生编号stuNo传至Dao层
+	 */
+	public void delStu(String stuNo) {
+		ud.delStu(stuNo);
+	}
+	
+	/**
+	 * 查询学生信息
+	 * 通过学生编号stuNo传入Dao层
+	 * 返回Student对象
+	 */
+	public Student getStuInfo(String stuNo){
+		return ud.queStuNo(stuNo);
+	}
+	
+	/**
+	 * 更新学生信息
+	 * 将Student对象传入Dao层
+	 */
+	public void updateStu(Student stu){
+		ud.updateStu(stu);
+	}
 }

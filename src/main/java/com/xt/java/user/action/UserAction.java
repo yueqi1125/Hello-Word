@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -131,10 +132,57 @@ public class UserAction{
 		return "stuList";
 	}
 	
+	/**
+	 * 提交方式POST
+	 * 添加学生
+	 * 跳转添加学生页面
+	 * @param stu
+	 * @param map
+	 * @return
+	 */
 	@RequestMapping(value="/stuManager", method=RequestMethod.POST)
 	public String addStu(Student stu, Map<String,Object> map){
 		us.addStu(stu);
 		map.put("msg", "学生信息添加成功");
 		return "addStu";
+	}
+	
+	/**
+	 * 提交方式DELETE
+	 * 通过学生编号stuNo删除学生信息
+	 * @param stuNo
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping(value="/stuManager/{stuNo}", method=RequestMethod.DELETE)
+	public String delStu(@PathVariable("stuNo") String stuNo){
+		us.delStu(stuNo);
+		return "redirect:/stuList";
+	}
+	
+	/**
+	 * 提交方式GET
+	 * 通过学生编号stuNo获得学生信息
+	 * @param stuNo
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping(value="/stuManager/{stuNo}", method=RequestMethod.GET)
+	public String getStuInfo(@PathVariable("stuNo") String stuNo, Map<String,Object> map){
+		map.put("stu", us.getStuInfo(stuNo));
+		return "queStu";
+	}
+	
+	/**
+	 * 提交方式PUT
+	 * 修改学生信息
+	 * @param stuNo
+	 * @param map
+	 * @return
+	 */
+	@RequestMapping(value="/stuManager", method=RequestMethod.PUT)
+	public String updateStu(Student stu){
+		us.updateStu(stu);
+		return "redirect:/stuList";
 	}
 }

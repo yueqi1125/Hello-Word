@@ -47,4 +47,23 @@ public interface IUserService {
 	 * @return
 	 */
 	public boolean queStuNo(String stuNo);
+	
+	/**
+	 * 通过学生编号删除学生
+	 * @param stuNo
+	 */
+	public void delStu(String stuNo);
+	
+	/**
+	 * 通过学生编号获得学生全部信息
+	 * @param stuNo
+	 * @return
+	 */
+	public Student getStuInfo(String stuNo);
+	
+	/**
+	 * 修改学生信息
+	 * @param stu
+	 */
+	public void updateStu(Student stu);
 }
