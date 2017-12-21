@@ -31,7 +31,7 @@
 			<input type="submit" value="修改">
 		</form>
 		<hr>
-		操作用户：<a>${userInfo.userName }</a>
+		操作用户：<a>${userInfo.userName }</a><a href="${ctxPath }/views/login.jsp">返回登录页</a>
 	</div>
 </body>
 </html>
