@@ -142,7 +142,6 @@ public class UserAction{
 	 */
 	@RequestMapping(value="/stuManager", method=RequestMethod.POST)
 	public String addStu(Student stu, Map<String,Object> map){
-		System.out.println("=============================================");
 		us.addStu(stu);
 		map.put("msg", "学生信息添加成功");
 		return "addStu";
