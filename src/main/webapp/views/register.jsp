@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Sping Test</title>
+	<title>Spring Test</title>
 	<script src="${ctxPath}/static/js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
