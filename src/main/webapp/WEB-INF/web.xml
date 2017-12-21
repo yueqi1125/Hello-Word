@@ -5,7 +5,8 @@
 	metadata-complete="true" version="3.1">
 
   <display-name>Archetype Created Web Application</display-name>
-  
+  	
+  	<!-- 字符过滤器 -->
   	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -15,6 +16,7 @@
 		</init-param>
 	</filter>
 	
+	<!-- 监听器 自动装配applicationContext配置信息 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -23,11 +25,13 @@
 		<param-value>classpath:spring/applicationContext-db.xml</param-value>
 	</context-param>
 	
+	<!-- 过滤器 转化提交方式 -->
 	<filter>
 		<filter-name>hiddenHttpMethodFilter</filter-name>
 		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
 	</filter>
 	
+	<!-- Spring MVC 集中访问点，负责调度工作，流程控制 -->
 	<servlet>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<servlet-name>DispatcherServlet</servlet-name>

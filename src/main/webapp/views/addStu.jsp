@@ -30,9 +30,9 @@
 		                	var obj = JSON.parse(result);
 		                	$("#stuNoMsg").html(obj.msg);
 		                	if(obj.msg == "学生编号重复！"){
-		                		namesign = false;
+		                		sign = false;
 		                	} else {
-		        				namesign = true;
+		                		sign = true;
 		                	}
 		                }
 		            });

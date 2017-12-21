@@ -10,14 +10,18 @@
                http://www.springframework.org/schema/mvc
                http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
 
-
+	<!-- 装配action -->
 	<context:component-scan base-package="com.xt.java.*.action"></context:component-scan>
+	
+	<!-- 视图解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 
+	<!-- 处理静态资源请求，非静态转移至DispatcherServlet -->
 	<mvc:default-servlet-handler />
+	<!-- 提供Controller请求转发，json自动转化等功能 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 </beans>

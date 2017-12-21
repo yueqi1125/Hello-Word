@@ -125,7 +125,7 @@ public class UserDao implements IUserDao{
 	 * 通过学生编号删除数据库中的学生信息
 	 */
 	public void delStu(String stuNo){
-		String sql = "delete * from student where stu_No = ?";
+		String sql = "delete from student where stu_no = ?";
 		jdbcTemplate.update(sql, stuNo);
 	}
 	

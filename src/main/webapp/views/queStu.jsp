@@ -22,7 +22,7 @@
 			<a href="${ctxPath }/stuList.action">返回学生列表</a>
 		</div>
 		<form action="${ctxPath}/stuManager.action" method="post">
-			<input type="hidden" name="_method" value="PUT"/>
+			<input type="hidden" name="_method" value="put"/>
 			学生编号：<input type="text" name="stuNo" id="stuNo" value="${stu.stuNo }"><br> 
 			学生姓名：<input type="text" name="stuName" value="${stu.stuName }"><br> 
 			学院信息：<input type="text" name="college" value="${stu.college }"><br>

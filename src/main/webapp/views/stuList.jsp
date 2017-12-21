@@ -28,10 +28,13 @@
 				<tr>
 					<td>${stu.stuNo }</td><td>${stu.stuName }</td><td>${stu.college}</td><td>${stu.tel}</td><td>${stu.age}</td>
 					<td>
-						<a href="stuManager/${stu.stuNo }.action" method="get">查看</a>:
-						<a href="stuManager/${stu.stuNo }.action" method="post">删除
-							<input type="hidden" name="_method" value="delete"/>
-						</a>
+						<form action="stuManager/${stu.stuNo }.action" method="get">
+					        <input type="submit" value="查看">
+					    </form>
+						<form action="stuManager/${stu.stuNo }.action" method="post">
+					        <input type="hidden" name="_method" value="DELETE">
+					        <input type="submit" value="删除">
+					    </form>
 					</td>
 				</tr>
 			</c:forEach>
